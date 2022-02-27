@@ -1,5 +1,9 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
+import { error } from "../../cfg.js";
 export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
+  res.status(error ? 500 : 200).json({ name: `John Doe ${error}` });
 }

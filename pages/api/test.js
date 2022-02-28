@@ -1,4 +1,4 @@
-const date = "2022-02-28T11:20:00";
+const date = "2022-02-28T11:30:00";
 
 export default function handler(req, res) {
   res.setHeader("Cache-Control", "no-cache");

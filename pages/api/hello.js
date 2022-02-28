@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
   res.setHeader(
     "Cache-Control",
-    "public, s-maxage=10, stale-while-revalidate=59, stale-if-error=240"
+    "public, s-maxage=10, stale-while-revalidate=60, stale-if-error=600"
   );
 
   res.status(response.ok ? 200 : 500).json(data);

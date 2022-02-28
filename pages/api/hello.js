@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   try {
     const data = await (
-      await fetch("https://gh-frontend-stg.bmj.com/api/test")
+      await fetch("https://next-swr-thiniulian.vercel.app/api/test")
     ).json();
 
     res.setHeader(
@@ -11,6 +11,6 @@ export default async function handler(req, res) {
 
     res.status(200).json(data);
   } catch (e) {
-    res.status(500).json({ failed });
+    res.status(500).json({ status: "failed" });
   }
 }
